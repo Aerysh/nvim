@@ -1,6 +1,6 @@
 return {
   {
-    "Exafunction/codeium.vim",
+    "Exafunction/codeium.nvim",
     config = function()
       vim.g.codeium_filetypes = {
         ["TelescopePrompt"] = false,
