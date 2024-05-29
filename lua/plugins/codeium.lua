@@ -5,8 +5,6 @@ return {
       vim.g.codeium_filetypes = {
         ["TelescopePrompt"] = false,
       }
-
-      -- Change '<C-g>' here to any keycode you like.
       vim.keymap.set("i", "<C-g>", function()
         return vim.fn["codeium#Accept"]()
       end, { expr = true })
@@ -19,20 +17,6 @@ return {
       vim.keymap.set("i", "<c-x>", function()
         return vim.fn["codeium#Clear"]()
       end, { expr = true })
-    end,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    optional = true,
-    event = "VeryLazy",
-    opts = function(_, opts)
-      local icon = require("lazyvim.config").icons.kinds.Codeium
-      local function show_codeium_status()
-        return icon .. vim.fn["codeium#GetStatusString"]()
-      end
-
-      -- Insert the icon
-      table.insert(opts.sections.lualine_x, 2, show_codeium_status)
     end,
   },
 }
