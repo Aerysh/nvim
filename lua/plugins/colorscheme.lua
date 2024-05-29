@@ -1,11 +1,6 @@
 return {
   {
-    "catppuccin/nvim",
-    lazy = true,
-    name = "catppuccin",
-    opts = {
-      transparent_background = true,
-    },
+    "catppuccin",
     config = function()
       require("catppuccin").setup({
         color_overrides = {
